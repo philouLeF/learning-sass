@@ -1,0 +1,49 @@
+body {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh;
+    font: {
+        family: sans-serif;
+        weight: bold;
+    }
+}
+
+@mixin base {
+    color: white;
+    border: 5px solid white;
+    text-align: center;
+    padding: 15px;
+}
+
+@mixin changedColor {
+    color: black;
+    background-color: white;
+}
+
+#first {
+    @include base;
+    transition: 1s;
+    &:hover {
+        @include changedColor
+    }
+}
+
+#second {
+    @include base;
+    transition: 1s;
+    &:hover {
+        transform: scale(1.2);
+        @include changedColor
+    }
+}
+
+#third {
+    @include base;
+    transition: 1s;
+    &:hover {
+        transform: translate(20%);
+    }
+}
